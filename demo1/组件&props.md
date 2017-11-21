@@ -50,6 +50,7 @@ class Comment extends Component {
     }
 }
 ```
+这里我用的是class方式创建的Comment组件，注意自定义组件的首字母需要大写。
 - 然后是UserInfo的用户信息
 ``` jsx
 function UserInfo(props){
@@ -63,6 +64,7 @@ function UserInfo(props){
     );
 }
 ```
+将UserInfo单独模块化，方便之后的重复使用。
 - 用户头像和名称
 ``` jsx
 function Avatar(props){
@@ -74,6 +76,7 @@ function Avatar(props){
     );
 }
 ```
+同样将头像单独模块化
 - 将日期格式化一下
 ``` jsx
 function formatDate(date){
@@ -106,5 +109,6 @@ ReactDOM.render(
 );
 ```
 这个例子将组件和props的用法和创建说明的很详细了，也将其中的组件模块化了。像用户信息和头像已经作为一个模块分离出来了，之后可以重复调用。
+其实prop就是传递给下一个方法的一个对象，所以用props.author.name的方式调用。这样理解在传递参数之间会简单一些。
 
 >React中引入图片的方式很麻烦，目前所知的只能用import方法。如果是多张图片估计可以使用数组或者其他方式将其打包。
