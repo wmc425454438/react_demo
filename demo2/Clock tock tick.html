@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang = "zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="Clock tock tick">
+    <meta name="author" content="Mchael Wong">
+	<title>Hello React!</title>
+    <link rel="icon" href="./ico/favicon.ico">
+  </head>
+  <body>
+    <div id="root"></div>
+
+  </body>
+	<script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+	<script type="text/babel" >
+//计时器
+	class Clock extends React.Component {
+	//构造函数初始化state值
+		constructor(props){
+			super(props);
+			this.state = {date: new Date()};
+			
+		}
+		
+		//组件挂载期间每隔一秒执行一次tick函数
+		componentDidMount(){
+			this.timeID = setInterval(
+				() => this.tick(),
+				1000
+			);
+		}
+
+		//组件销毁时同样清除计时器
+		componentWillUnmount(){
+			clearInterval(this.timeID);
+		}
+		
+		//每一次调用都更新state中的date值，重新渲染组件需要用setState函数
+		tick(){
+			this.setState({
+				date: new Date(),
+			});
+		}
+		
+		//返回组件
+		render(){
+			return (
+				<div>
+				<h1>Hello World!</h1>
+				<h2>It is {this.state.date.toLocaleString()}.</h2>
+				</div>
+			);
+		}
+	}
+	
+	//组件之间都是隔离的不允许也不应该互相访问
+	function App(){
+		return (
+		<div>
+			<Clock />
+			<Clock />
+			<Clock />
+		</div>
+		);
+	}
+	
+	//渲染组件
+	ReactDOM.render(
+		<App />
+		,document.getElementById('root')
+	);
+
+
+	</script>
+</html>
