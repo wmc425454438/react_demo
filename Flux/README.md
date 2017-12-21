@@ -22,4 +22,4 @@ Flux应用分为四部分：
 4. Store 更新后，发出一个"change"事件
 5. View 收到"change"事件后，更新页面
 
-具体介绍请看![阮一峰老师的教程](http://www.ruanyifeng.com/blog/2016/01/flux.html)
+具体介绍请看[阮一峰老师的教程](http://www.ruanyifeng.com/blog/2016/01/flux.html)
