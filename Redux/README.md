@@ -62,7 +62,7 @@ Redux 本身很简单。
 { type: 'SET_VISIBILITY_FILTER', filter: 'SHOW_ALL' }
 ```
 
-强制使⽤ action 来描述所有变化带来的好处是可以清晰地知道应⽤中到底发 ⽣了什么。如果⼀些东⻄改变了，就可以知道为什么变。action 就像是描述 发⽣了什么的⾯包屑。最终，为了把 action 和 state 串起来，开发⼀些函 数，这就是 reducer。再次地，没有任何魔法，reducer 只是⼀个接收 state和 action，并返回新的 state 的函数。 对于⼤的应⽤来说，可能很难开发这 样的函数，所以我们编写很多⼩函数来分别管理 state 的⼀部分：
+强制使⽤ action 来描述所有变化带来的好处是可以清晰地知道应⽤中到底发生了什么。如果⼀些东⻄改变了，就可以知道为什么变。action 就像是描述发生了什么的⾯包屑。最终，为了把 action 和 state 串起来，开发⼀些函数，这就是 reducer。再次地，没有任何魔法，reducer 只是⼀个接收 state和 action，并返回新的 state 的函数。 对于⼤的应用来说，可能很难开发这样的函数，所以我们编写很多小函数来分别管理 state 的⼀部分：
 
 ``` js
 function visibilityFilter(state = 'SHOW_ALL', action){
@@ -91,7 +91,7 @@ function todos(state = [], action)
 ```
 
 
-再开发⼀个 reducer 调⽤这两个 reducer，进⽽来管理整个应⽤的 state：
+再开发⼀个 reducer 调⽤这两个 reducer，进而来管理整个应用的 state：
 
 ``` js
 function todoApp(state = {}, action) {
@@ -103,7 +103,7 @@ function todoApp(state = {}, action) {
 
 ```
 
-这差不多就是 Redux 思想的全部。注意到没我们还没有使⽤任何 Redux 的API。Redux ⾥有⼀些⼯具来简化这种模式，但是主要的想法是如何根据这 些 action 对象来更新 state，⽽且 90% 的代码都是纯 JavaScript，没⽤ Redux、Redux API 和其它魔法。
+这差不多就是 Redux 思想的全部。注意到没我们还没有使用任何 Redux 的API。Redux ⾥有⼀些⼯具来简化这种模式，但是主要的想法是如何根据这 些 action 对象来更新 state，⽽且 90% 的代码都是纯 JavaScript，没用 Redux、Redux API 和其它魔法。
 
 
 
